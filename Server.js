@@ -35,6 +35,33 @@ app.post('/action',async (req,res)=>{
     }
 })
 
+app.post('/predict', async (req,res)=>{
+    try {
+        const vid=null;
+        const pythonProcess = spawn('python', ['predict.py', vid]);
+            
+        let data = '';
+        pythonProcess.stdout.on('data', (chunk) => {
+                data += chunk.toString();
+            });
+
+            pythonProcess.stderr.on('data', (chunk) => {
+                console.error(`stderr: ${chunk}`);
+            });
+
+            pythonProcess.on('close', (code) => {
+                if (code !== 0) {
+                return res.status(500).send('Something went wrong');
+                }
+
+            res.send(data);
+
+        });
+    } catch (e) {
+        res.status(500).json({error:"ERROR"});
+    }
+})
+
 app.listen(3000,()=>{
     console.log("Server running on port 3000");
 })
