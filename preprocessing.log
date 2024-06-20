@@ -1,0 +1,16 @@
+2024-06-20 22:41:54,976:INFO:Entering into python script
+2024-06-20 22:41:54,976:INFO:Text received: Hello Everyone
+2024-06-20 22:41:54,977:INFO:Loading the spaCy model
+2024-06-20 22:41:57,434:INFO:Model loaded successfully
+2024-06-20 22:41:57,970:INFO:Starting token filtering
+2024-06-20 22:41:57,970:INFO:Token filtering completed
+2024-06-20 22:41:57,972:INFO:Preprocessing completed
+2024-06-20 22:41:57,972:INFO:Final text generated: hello-everyone
+2024-06-20 22:43:06,353:INFO:Entering into python script
+2024-06-20 22:43:06,353:INFO:Text received: Hello i would like to have a chat with you babe
+2024-06-20 22:43:06,354:INFO:Loading the spaCy model
+2024-06-20 22:43:07,440:INFO:Model loaded successfully
+2024-06-20 22:43:07,667:INFO:Starting token filtering
+2024-06-20 22:43:07,667:INFO:Token filtering completed
+2024-06-20 22:43:07,669:INFO:Preprocessing completed
+2024-06-20 22:43:07,669:INFO:Final text generated: hello-i-like-chat-you-babe
