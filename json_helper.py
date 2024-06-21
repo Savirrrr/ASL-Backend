@@ -85,14 +85,13 @@
 #         # file_name=s_text+'.mp4'
 #     print(s_text)
 
-import spacy
 import sys
 import logging
+import spacy
 
-# Configure logging
 logging.basicConfig(filename='preprocessing.log', level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s')
 
-class preprocessing:
+class Preprocessing:
     def text_preprocess(self, text):
         logging.info("Loading the spaCy model")
         nlp = spacy.load("en_core_web_sm")
@@ -103,6 +102,8 @@ class preprocessing:
         logging.info("Starting token filtering")
         for token in doc:
             if (token.is_stop or token.is_punct or token.like_num) and token.pos_ != 'PRON':
+                continue
+            elif token.text.lower() == "bro":
                 continue
             else:
                 filtered_tokens.append(token.lemma_.lower())
@@ -115,7 +116,12 @@ if __name__ == '__main__':
     text = sys.argv[1]
     logging.info(f"Text received: {text}")
     
-    pre = preprocessing()
+    placeholder = "__HOW_ARE_YOU__"
+    if "how are you" in text.lower():
+        text = text.lower().replace("how are you", placeholder)
+    logging.info(f"Modified text received: {text}")
+    
+    pre = Preprocessing()
     preprocessed_text = pre.text_preprocess(text)
     logging.info("Preprocessing completed")
     
@@ -123,6 +129,12 @@ if __name__ == '__main__':
         s_text = preprocessed_text[0]
     else:
         s_text = '-'.join(preprocessed_text)
+    
+    logging.info(f"s_text before replacing {s_text}")
+    
+    if placeholder in s_text:
+        s_text = s_text.replace(placeholder, "how-are-you")
+    s_text=s_text.replace('_','-')
     logging.info(f"Final text generated: {s_text}")
     
     print(s_text)

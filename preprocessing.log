@@ -30,3 +30,69 @@
 2024-06-21 18:04:54,969:INFO:Token filtering completed
 2024-06-21 18:04:54,971:INFO:Preprocessing completed
 2024-06-21 18:04:54,971:INFO:Final text generated: hello-you
+2024-06-21 19:25:16,704:INFO:Entering into python script
+2024-06-21 19:25:16,760:INFO:Text received: Hello and bye
+2024-06-21 19:25:16,760:INFO:Loading the spaCy model
+2024-06-21 19:25:18,339:INFO:Model loaded successfully
+2024-06-21 19:25:18,757:INFO:Starting token filtering
+2024-06-21 19:25:18,757:INFO:Token filtering completed
+2024-06-21 19:25:18,759:INFO:Preprocessing completed
+2024-06-21 19:25:18,759:INFO:Final text generated: hello-bye
+2024-06-22 00:09:17,899:INFO:Entering into python script
+2024-06-22 00:09:17,920:INFO:Text received: Hello bro how are you
+2024-06-22 00:09:17,921:INFO:Loading the spaCy model
+2024-06-22 00:09:19,955:INFO:Model loaded successfully
+2024-06-22 00:09:20,331:INFO:Starting token filtering
+2024-06-22 00:09:20,331:INFO:Token filtering completed
+2024-06-22 00:09:20,333:INFO:Preprocessing completed
+2024-06-22 00:09:20,333:INFO:Final text generated: hello-bro-you
+2024-06-22 00:21:31,805:INFO:Entering into python script
+2024-06-22 00:21:31,831:INFO:Text received: Hello bro how are you
+2024-06-22 00:21:31,831:INFO:Modified received: Hello bro how are you
+2024-06-22 00:21:31,831:INFO:Loading the spaCy model
+2024-06-22 00:21:32,937:INFO:Model loaded successfully
+2024-06-22 00:21:33,196:INFO:Starting token filtering
+2024-06-22 00:21:33,196:INFO:Token filtering completed
+2024-06-22 00:21:33,199:INFO:Preprocessing completed
+2024-06-22 00:21:33,199:INFO:s_text before replacing hello-bro-you
+2024-06-22 00:21:33,199:INFO:Final text generated: hello-bro-you
+2024-06-22 00:26:23,260:INFO:Entering into python script
+2024-06-22 00:26:23,279:INFO:Text received: Hello bro how are you
+2024-06-22 00:26:23,279:INFO:Modified text received: hello bro how are you
+2024-06-22 00:26:23,279:INFO:Loading the spaCy model
+2024-06-22 00:26:25,184:INFO:Model loaded successfully
+2024-06-22 00:26:25,498:INFO:Starting token filtering
+2024-06-22 00:26:25,498:INFO:Token filtering completed
+2024-06-22 00:26:25,500:INFO:Preprocessing completed
+2024-06-22 00:26:25,500:INFO:s_text before replacing hello-you
+2024-06-22 00:26:25,500:INFO:Final text generated: hello-you
+2024-06-22 00:28:08,895:INFO:Entering into python script
+2024-06-22 00:28:08,910:INFO:Text received: Hello bro how are you
+2024-06-22 00:28:08,922:INFO:Modified text received: hello bro __HOW_ARE_YOU__
+2024-06-22 00:28:08,922:INFO:Loading the spaCy model
+2024-06-22 00:28:10,064:INFO:Model loaded successfully
+2024-06-22 00:28:10,302:INFO:Starting token filtering
+2024-06-22 00:28:10,302:INFO:Token filtering completed
+2024-06-22 00:28:10,304:INFO:Preprocessing completed
+2024-06-22 00:28:10,305:INFO:s_text before replacing hello-how_are_you
+2024-06-22 00:28:10,305:INFO:Final text generated: hello-how_are_you
+2024-06-22 00:29:17,954:INFO:Entering into python script
+2024-06-22 00:29:17,964:INFO:Text received: Hello bro how are you
+2024-06-22 00:29:17,964:INFO:Modified text received: hello bro __HOW-ARE-YOU__
+2024-06-22 00:29:17,964:INFO:Loading the spaCy model
+2024-06-22 00:29:19,077:INFO:Model loaded successfully
+2024-06-22 00:29:19,358:INFO:Starting token filtering
+2024-06-22 00:29:19,358:INFO:Token filtering completed
+2024-06-22 00:29:19,360:INFO:Preprocessing completed
+2024-06-22 00:29:19,360:INFO:s_text before replacing hello-you
+2024-06-22 00:29:19,360:INFO:Final text generated: hello-you
+2024-06-22 00:30:26,633:INFO:Entering into python script
+2024-06-22 00:30:26,646:INFO:Text received: Hello bro how are you
+2024-06-22 00:30:26,646:INFO:Modified text received: hello bro __HOW_ARE_YOU__
+2024-06-22 00:30:26,646:INFO:Loading the spaCy model
+2024-06-22 00:30:27,724:INFO:Model loaded successfully
+2024-06-22 00:30:28,028:INFO:Starting token filtering
+2024-06-22 00:30:28,028:INFO:Token filtering completed
+2024-06-22 00:30:28,031:INFO:Preprocessing completed
+2024-06-22 00:30:28,031:INFO:s_text before replacing hello-how_are_you
+2024-06-22 00:30:28,031:INFO:Final text generated: hello-how-are-you
