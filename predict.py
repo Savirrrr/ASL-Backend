@@ -1,7 +1,8 @@
-from ultralytics import YOLOv10 
+from ultralytics import YOLO
 import sys
+import cv2
 
-model=YOLOv10("best.pt")
+model=YOLO("best.pt")
 
 
 if __name__=="__main__":

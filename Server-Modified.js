@@ -216,6 +216,11 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 const ffmpeg = require('fluent-ffmpeg');
+const ffmpegPath = require('ffmpeg-static');
+// const ffmpeg = require('fluent-ffmpeg');
+
+// Set the path to the ffmpeg binary
+ffmpeg.setFfmpegPath(ffmpegPath);
 
 const app = express();
 

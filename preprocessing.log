@@ -14,3 +14,19 @@
 2024-06-20 22:43:07,667:INFO:Token filtering completed
 2024-06-20 22:43:07,669:INFO:Preprocessing completed
 2024-06-20 22:43:07,669:INFO:Final text generated: hello-i-like-chat-you-babe
+2024-06-21 11:53:14,225:INFO:Entering into python script
+2024-06-21 11:53:14,225:INFO:Text received: Hello lets have some chat
+2024-06-21 11:53:14,225:INFO:Loading the spaCy model
+2024-06-21 11:53:16,725:INFO:Model loaded successfully
+2024-06-21 11:53:17,046:INFO:Starting token filtering
+2024-06-21 11:53:17,047:INFO:Token filtering completed
+2024-06-21 11:53:17,049:INFO:Preprocessing completed
+2024-06-21 11:53:17,049:INFO:Final text generated: hello-let-chat
+2024-06-21 18:04:52,713:INFO:Entering into python script
+2024-06-21 18:04:52,810:INFO:Text received: Hello how are you
+2024-06-21 18:04:52,811:INFO:Loading the spaCy model
+2024-06-21 18:04:54,564:INFO:Model loaded successfully
+2024-06-21 18:04:54,969:INFO:Starting token filtering
+2024-06-21 18:04:54,969:INFO:Token filtering completed
+2024-06-21 18:04:54,971:INFO:Preprocessing completed
+2024-06-21 18:04:54,971:INFO:Final text generated: hello-you
