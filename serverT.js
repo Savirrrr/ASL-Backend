@@ -53,7 +53,8 @@ function checkFileType(file, cb) {
 
 const runPythonScript = (script, args) => {
   return new Promise((resolve, reject) => {
-    const pythonProcess = spawn(path.join(__dirname, 'env_<timestamp>/bin/python'), [script, ...args]);
+    const pythonExecutable = process.env.PYTHON_VENV_PATH;
+    const pythonProcess = spawn(pythonExecutable, [script, ...args]);
 
     let data = '';
     pythonProcess.stdout.on('data', (chunk) => {
