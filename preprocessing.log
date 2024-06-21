@@ -96,3 +96,23 @@
 2024-06-22 00:30:28,031:INFO:Preprocessing completed
 2024-06-22 00:30:28,031:INFO:s_text before replacing hello-how_are_you
 2024-06-22 00:30:28,031:INFO:Final text generated: hello-how-are-you
+2024-06-22 00:46:40,055:INFO:Entering into python script
+2024-06-22 00:46:40,101:INFO:Text received: Hello bro how are you
+2024-06-22 00:46:40,101:INFO:Modified text received: hello bro __HOW_ARE_YOU__
+2024-06-22 00:46:40,101:INFO:Loading the spaCy model
+2024-06-22 00:46:41,675:INFO:Model loaded successfully
+2024-06-22 00:46:42,168:INFO:Starting token filtering
+2024-06-22 00:46:42,168:INFO:Token filtering completed
+2024-06-22 00:46:42,171:INFO:Preprocessing completed
+2024-06-22 00:46:42,171:INFO:s_text before replacing hello-how_are_you
+2024-06-22 00:46:42,171:INFO:Final text generated: hello-how-are-you
+2024-06-22 00:47:09,561:INFO:Entering into python script
+2024-06-22 00:47:09,585:INFO:Text received: Hello good morning
+2024-06-22 00:47:09,585:INFO:Modified text received: Hello good morning
+2024-06-22 00:47:09,585:INFO:Loading the spaCy model
+2024-06-22 00:47:10,573:INFO:Model loaded successfully
+2024-06-22 00:47:10,845:INFO:Starting token filtering
+2024-06-22 00:47:10,845:INFO:Token filtering completed
+2024-06-22 00:47:10,848:INFO:Preprocessing completed
+2024-06-22 00:47:10,848:INFO:s_text before replacing hello-good-morning
+2024-06-22 00:47:10,848:INFO:Final text generated: hello-good-morning
