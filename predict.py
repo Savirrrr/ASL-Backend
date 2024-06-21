@@ -1,5 +1,4 @@
-from ultralytics import YOLOv10 # type: ignore
-import cv2
+from ultralytics import YOLOv10 
 import sys
 
 model=YOLOv10("best.pt")
@@ -17,12 +16,22 @@ if __name__=="__main__":
     "tissues", "tomato", "total", "urgent", "vegetables", "wait", "warm", "water", "what", "yoghurt", "your"
     ]
     index=[]
-    model=YOLOv10("best.pt")
+    # model=YOLOv10("best.pt")
+    
     cap=cv2.VideoCapture(sys.argv[1])
     while(True):
         check,frame=cap.read()
-        result=model.predict(frame)
-        index.append(names[result-1])
+        
+        if not check:
+            break
+        results=model.predict(frame)
+        for result in results:
+            for r in result:
+                if r['confidence'] > 0.3:
+                    class_id = r['class']
+                    index.append(names[class_id])
+                    
+    cap.relase()
     print(index)
     
     
