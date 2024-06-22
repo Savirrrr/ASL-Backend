@@ -53,8 +53,8 @@ function checkFileType(file, cb) {
 
 const runPythonScript = (script, args) => {
   return new Promise((resolve, reject) => {
-    const pythonExecutable = process.env.PYTHON_VENV_PATH;
-    const pythonProcess = spawn(pythonExecutable, [script, ...args]);
+    const pythonPath = fs.readFileSync('/home/ubuntu/ASL-Backend/python_venv_path.txt', 'utf8').trim();
+    const pythonProcess = spawn(pythonPath, [script, ...args]);
 
     let data = '';
     pythonProcess.stdout.on('data', (chunk) => {
