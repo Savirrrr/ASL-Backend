@@ -1,7 +1,7 @@
 import json
 import os
 import subprocess
-from ultralytics import YOLO
+# from ultralytics import YOLO
 import sys
 import cv2
 
@@ -10,7 +10,7 @@ def run_yolov9_detection( ):
         os.makedirs("results")
 
     command = [
-        'python', 'detect.py',
+        'python', 'yolov9/detect.py',
         '--source', "frames",
         '--output', "results",
         '--weights', "best.pt",
@@ -20,7 +20,7 @@ def run_yolov9_detection( ):
     subprocess.run(command)
 
 def main(video_path):
-    model = YOLO("best.pt")
+    # model = YOLO("best.pt")
 
     names = [
         "A", "B", "C", "CH", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
@@ -39,7 +39,7 @@ def main(video_path):
     if not cap.isOpened():
         print(f"Error: Could not open video {video_path}")
         return
-
+    frame_number=0
     while True:
         check, frame = cap.read()
         if not check:
@@ -54,11 +54,11 @@ def main(video_path):
     
     print(index)
 
-def parse_detection_results(results_folder):
+def parse_detection_results(result):
     class_names = []
-    for result_file in os.listdir(results_folder):
+    for result_file in os.listdir("results"):
         if result_file.endswith('.json'): 
-            result_path = os.path.join(results_folder, result_file)
+            result_path = os.path.join("results", result_file)
             with open(result_path, 'r') as f:
                 data = json.load(f)
                 for detection in data:
@@ -67,8 +67,6 @@ def parse_detection_results(results_folder):
     
     return class_names
 
-detected_classes = parse_detection_results("results")
-print(detected_classes)
 
 
 if __name__ == "__main__":
@@ -76,3 +74,6 @@ if __name__ == "__main__":
         print("Usage: python predict.py <video_path>")
     else:
         main(sys.argv[1])
+        run_yolov9_detection()
+        detected_classes = parse_detection_results("results")
+        print(detected_classes)
