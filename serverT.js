@@ -32,7 +32,7 @@ const upload = multer({
   limits: { fileSize: parseInt(process.env.FILE_SIZE_LIMIT) || 100000000 },
   fileFilter: (req, file, cb) => {
     checkFileType(file, cb);
-  }
+  }  
 }).single('video');
 
 function checkFileType(file, cb) {
