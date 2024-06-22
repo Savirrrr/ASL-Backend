@@ -1,6 +1,23 @@
+import json
+import os
+import subprocess
 from ultralytics import YOLO
 import sys
 import cv2
+
+def run_yolov9_detection( ):
+    if not os.path.exists("results"):
+        os.makedirs("results")
+
+    command = [
+        'python', 'detect.py',
+        '--source', "frames",
+        '--output', "results",
+        '--weights', "best.pt",
+        '--conf', str(0.3)
+    ]
+    
+    subprocess.run(command)
 
 def main(video_path):
     model = YOLO("best.pt")
@@ -27,16 +44,32 @@ def main(video_path):
         check, frame = cap.read()
         if not check:
             break
-
-        results = model.predict(frame)
-        for result in results:
-            for r in result:
-                if r['confidence'] > 0.3:
-                    class_id = r['class']
-                    index.append(names[class_id])
-
+        if not os.path.exists("output"):
+            os.makedirs("output")
+        frame_path = os.path.join("output", f'frame_{frame_number}.jpg')
+        cv2.imwrite(frame_path, frame)
+        frame_number += 1
+        
     cap.release()
+    
     print(index)
+
+def parse_detection_results(results_folder):
+    class_names = []
+    for result_file in os.listdir(results_folder):
+        if result_file.endswith('.json'): 
+            result_path = os.path.join(results_folder, result_file)
+            with open(result_path, 'r') as f:
+                data = json.load(f)
+                for detection in data:
+                    class_name = detection['class']  
+                    class_names.append(class_name)
+    
+    return class_names
+
+detected_classes = parse_detection_results("results")
+print(detected_classes)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
